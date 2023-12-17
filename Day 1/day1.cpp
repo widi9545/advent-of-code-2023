@@ -25,17 +25,24 @@ class numberCount{
     
 
         int iterateVector(){
-            int firstNumber;
-            int secondNumber;
+
+            int firstNumber = 0;
+            int secondNumber = 0;
+            int digitCounter = 0;
+            
+            int sum = 0;
+
 
             for(auto & line : lines){
-                for(auto & character : line){
-                    if(isdigit(character)){
-                        cout << character << endl;
-                    }
+
+                int lineSize = line.size();
+                for(int i = 0; i < lineSize; i++){
+                    cout << line[i] << endl;
                 }
+
             }
-            return 1;
+            
+           
         }
 
 };
@@ -59,6 +66,7 @@ int main(){
 
     numberCounter.returnFileLen();
     numberCounter.iterateVector();
+    
 
 
 
