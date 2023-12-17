@@ -28,8 +28,8 @@ class numberCount{
 
             int firstNumber = 0;
             int secondNumber = 0;
-            
-            int digitCounter = 0;
+            string combinedNumber;
+
             int sum = 0;
 
             for(auto & line : lines){
@@ -38,17 +38,25 @@ class numberCount{
                 for(int i = 0; i < lineSize; i++){
 
                     if(isdigit(line[i])){
-                        firstNumber = line[i] - '0';
-                        cout << firstNumber << endl;
-                       
-                    }
-                    
+                        if(firstNumber == 0){
+                            firstNumber = line[i] - '0';
+                            secondNumber = line[i] - '0';
+                        }
+
+                        else{
+                            secondNumber = line[i] - '0';
+                        }
+                    }  
                 }
-                
+                combinedNumber = to_string(firstNumber) + to_string(secondNumber);
+                sum = sum + stoi(combinedNumber);
+
+
+                firstNumber = 0;
+                secondNumber = 0;
 
             }
-            
-           
+            return sum;
         }
 
 };
@@ -71,10 +79,9 @@ int main(){
     }
 
     numberCounter.returnFileLen();
-    numberCounter.iterateVector();
+    int sum = numberCounter.iterateVector();
+    cout << sum << endl;
     
-
-
 
     return 1;
 }
