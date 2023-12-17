@@ -28,17 +28,23 @@ class numberCount{
 
             int firstNumber = 0;
             int secondNumber = 0;
-            int digitCounter = 0;
             
+            int digitCounter = 0;
             int sum = 0;
 
-
             for(auto & line : lines){
-
                 int lineSize = line.size();
+        
                 for(int i = 0; i < lineSize; i++){
-                    cout << line[i] << endl;
+
+                    if(isdigit(line[i])){
+                        firstNumber = line[i] - '0';
+                        cout << firstNumber << endl;
+                       
+                    }
+                    
                 }
+                
 
             }
             
